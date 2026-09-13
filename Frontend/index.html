@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Job Drive | Queue Management System</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">Q</div>
+
+            <div>
+                <h2>JobQueue</h2>
+                <span>Smart Recruitment</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#register">Register</a>
+
+            <!--<a href="#queue">Queue Status</a> -->
+
+        </nav>
+
+
+        <button class="nav-button" onclick="scrollToRegister()">
+            Join Drive
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✦ Smart Recruitment Queue
+            </div>
+
+
+            <h1>
+                Skip the Long Queue.<br>
+                <span>Track Your Turn.</span>
+            </h1>
+
+
+            <p>
+                A simple digital queue management system designed
+                to make bulk hiring drives faster, easier and more
+                organized for candidates and recruiters.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="scrollToRegister()"
+                >
+                    Register for Job Drive
+                    <span>→</span>
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="scrollToQueue()"
+                >
+                    Check Queue Status
+                </button>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>100+</strong>
+                    <span>Candidates</span>
+                </div>
+
+
+                <div>
+                    <strong>Digital</strong>
+                    <span>Token System</span>
+                </div>
+
+
+                <div>
+                    <strong>Real-Time</strong>
+                    <span>Queue Updates</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO CARD -->
+
+        <div class="hero-card">
+
+            <div class="card-top">
+
+                <span>LIVE JOB DRIVE</span>
+
+                <div class="live-dot"></div>
+
+            </div>
+
+
+            <h3>
+                Walk-in Hiring Drive
+            </h3>
+
+
+            <p class="company">
+                Tech Solutions Pvt. Ltd.
+            </p>
+
+
+            <div class="queue-preview">
+
+                <div class="queue-number">
+
+                    <span>NOW SERVING</span>
+
+                    <strong id="heroCurrentToken">
+                        19
+                    </strong>
+
+                </div>
+
+
+                <div class="queue-info">
+
+                    <span>Next Candidate</span>
+
+                    <strong>20</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+
+            <p class="queue-message">
+
+                Candidates can wait comfortably while tracking
+                their turn digitally.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= REGISTER SECTION ================= -->
+
+    <section id="register" class="section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                STEP 01
+            </span>
+
+
+            <h2>
+                Register for the Job Drive
+            </h2>
+
+
+            <p>
+                Enter your details to receive your digital queue token.
+            </p>
+
+        </div>
+
+
+
+        <div class="register-container">
+
+            <form id="registrationForm">
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE + COLLEGE -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="college">
+                            College / University
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            placeholder="Enter your college name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- POSITION -->
+
+                <div class="form-group">
+
+                    <label for="position">
+                        Applied Position
+                    </label>
+
+
+                    <select id="position" required>
+
+                        <option value="">
+                            Select a position
+                        </option>
+
+                        <option value="Software Developer">
+                            Software Developer
+                        </option>
+
+                        <option value="Frontend Developer">
+                            Frontend Developer
+                        </option>
+
+                        <option value="Backend Developer">
+                            Backend Developer
+                        </option>
+
+                        <option value="QA Tester">
+                            QA Tester
+                        </option>
+
+                        <option value="IT Support">
+                            IT Support
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="primary-btn register-btn"
+                >
+                    Get My Token
+                    <span>→</span>
+                </button>
+
+            </form>
+
+
+
+            <!-- TOKEN RESULT -->
+
+            <div
+                id="tokenResult"
+                class="token-result hidden"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <p class="success-text">
+                    Registration Successful!
+                </p>
+
+
+                <span>
+                    Your Digital Token
+                </span>
+
+
+                <div
+                    class="token-number"
+                    id="generatedToken"
+                >
+                    27
+                </div>
+
+
+                <p>
+                    Please keep your token number safe.
+                    You can use it to track your queue.
+                </p>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="scrollToQueue()"
+                >
+                    View My Queue Status
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= QUEUE STATUS ================= -->
+
+    <section id="queue" class="section light-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                STEP 02
+            </span>
+
+
+            <h2>
+                Track Your Queue
+            </h2>
+
+
+            <p>
+                No need to stand in a physical queue.
+                Track your position digitally.
+            </p>
+
+        </div>
+
+
+
+        <div class="queue-dashboard">
+
+            <div class="queue-main-card">
+
+                <div class="queue-header">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR TOKEN
+                        </span>
+
+
+                        <h3 id="studentToken">
+                            --
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        class="status waiting"
+                        id="studentStatus"
+                    >
+                        ● Waiting
+                    </div>
+
+                </div>
+
+
+
+                <div class="queue-details">
+
+                    <div class="detail-box">
+
+                        <span>
+                            Current Token
+                        </span>
+
+                        <strong id="currentToken">
+                            19
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <span>
+                            Candidates Ahead
+                        </span>
+
+                        <strong id="candidatesAhead">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-box">
+
+                        <span>
+                            Estimated Wait
+                        </span>
+
+                        <strong id="waitingTime">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUEUE PROGRESS -->
+
+                <div class="queue-progress">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Queue Progress
+                        </span>
+
+                        <span id="progressText">
+                            Waiting...
+                        </span>
+
+                    </div>
+
+
+                    <div class="large-progress">
+
+                        <div id="queueProgress"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NOTICE -->
+
+                <div class="queue-notice">
+
+                    <div class="notice-icon">
+                        i
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Stay updated
+                        </strong>
+
+
+                        <p>
+                            Keep this page open to monitor
+                            your queue position.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ADMIN LOGIN ================= -->
+
+    <section
+        id="admin-login"
+        class="section admin-section hidden"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                SECURE ACCESS
+            </span>
+
+
+            <h2>
+                HR Admin Login
+            </h2>
+
+
+            <p>
+                This area is restricted to authorized HR personnel.
+            </p>
+
+        </div>
+
+
+
+        <div class="admin-login-card">
+
+            <div class="admin-icon">
+                🔐
+            </div>
+
+
+            <h3>
+                Secure Admin Access
+            </h3>
+
+
+            <p class="admin-description">
+                Enter the administrator password to access
+                the job drive management dashboard.
+            </p>
+
+
+            <form id="adminLoginForm">
+
+                <div class="form-group">
+
+                    <label for="adminPassword">
+                        Admin Password
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter admin password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn admin-login-btn"
+                >
+                    Login to Dashboard
+                    <span>→</span>
+                </button>
+
+            </form>
+
+
+            <p
+                id="loginError"
+                class="login-error"
+            ></p>
+
+
+            <button
+                class="back-button"
+                onclick="goBackToHome()"
+            >
+                ← Back to Website
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HR DASHBOARD ================= -->
+
+    <section
+        id="hr-dashboard"
+        class="section hidden"
+    >
+
+        <div class="dashboard-top">
+
+            <div class="section-heading dashboard-heading">
+
+                <span class="section-label">
+                    ADMIN PANEL
+                </span>
+
+
+                <h2>
+                    HR Queue Dashboard
+                </h2>
+
+
+                <p>
+                    Manage candidates and control the interview queue.
+                </p>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="logoutAdmin()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Candidates
+                </span>
+
+                <strong id="totalCandidates">
+                    25
+                </strong>
+
+                <small>
+                    Registered today
+                </small>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Waiting
+                </span>
+
+                <strong id="waitingCandidates">
+                    24
+                </strong>
+
+                <small>
+                    In the queue
+                </small>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Completed
+                </span>
+
+                <strong id="completedCandidates">
+                    1
+                </strong>
+
+                <small>
+                    Interviews completed
+                </small>
+
+            </div>
+
+
+            <div class="stat-card highlight">
+
+                <span>
+                    Current Token
+                </span>
+
+                <strong id="hrCurrentToken">
+                    19
+                </strong>
+
+                <small>
+                    Currently serving
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HR QUEUE TABLE -->
+
+        <div class="hr-panel">
+
+            <div class="hr-panel-header">
+
+                <div>
+
+                    <h3>
+                        Candidate Queue
+                    </h3>
+
+
+                    <p>
+                        Manage today's job drive candidates.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="nextCandidateBtn"
+                >
+                    Call Next Candidate →
+                </button>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Token
+                            </th>
+
+                            <th>
+                                Candidate
+                            </th>
+
+                            <th>
+                                Position
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="candidateTable">
+
+                        <tr>
+
+                            <td>
+                                <strong>19</strong>
+                            </td>
+
+                            <td>
+                                Rahul Sharma
+                            </td>
+
+                            <td>
+                                Software Developer
+                            </td>
+
+                            <td>
+                                <span class="table-status interviewing">
+                                    Interviewing
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>20</strong>
+                            </td>
+
+                            <td>
+                                Priya Patil
+                            </td>
+
+                            <td>
+                                QA Tester
+                            </td>
+
+                            <td>
+                                <span class="table-status waiting-status">
+                                    Waiting
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>21</strong>
+                            </td>
+
+                            <td>
+                                Amit Shah
+                            </td>
+
+                            <td>
+                                Frontend Developer
+                            </td>
+
+                            <td>
+                                <span class="table-status waiting-status">
+                                    Waiting
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>22</strong>
+                            </td>
+
+                            <td>
+                                Sneha Joshi
+                            </td>
+
+                            <td>
+                                IT Support
+                            </td>
+
+                            <td>
+                                <span class="table-status waiting-status">
+                                    Waiting
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <div class="logo footer-logo">
+
+                    <div class="logo-icon">
+                        Q
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            JobQueue
+                        </h2>
+
+                        <span>
+                            Smart Recruitment
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Making recruitment drives simpler,
+                    smarter and more organized.
+                </p>
+
+            </div>
+
+
+
+            <!-- ADMIN LINK -->
+
+            <div class="footer-admin">
+
+                <p>
+                    Are you an HR administrator?
+                </p>
+
+
+                <a
+                    href="#admin-login"
+                    onclick="openAdminLogin()"
+                >
+                    🔐 Admin Panel
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Smart Job Drive Queue Management System
+            </span>
+
+            <span>
+                Built with HTML, CSS & JavaScript
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
